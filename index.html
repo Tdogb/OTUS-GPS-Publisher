@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTUS GPS Manager</title>
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+        }
+        .column {
+            width: 50%;
+            padding: 10px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+        .console {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            padding-bottom: 0px;
+            padding-top: 0px;
+            height: 250px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- First Column: Serial Port Controls -->
+    <div class="column">
+        <h2>Serial Port Controls</h2>
+        <label for="port-select">Select Serial Port:</label><br>
+        <select id="port-select">
+            <option value="" disabled selected>Choose a port...</option>
+        </select><br><br>
+
+        <label for="baud-rate">Baud Rate:</label><br>
+        <input id="baud-rate" type="number" placeholder="4800"><br><br>
+
+        <button id="open-port" disabled>Open Port</button>
+        <button id="close-port" disabled>Close Port</button>
+        <button id="refresh" enabled>Refresh</button>
+
+    </div>
+    <!-- Second Column: Console -->
+    <div class="column">
+        <h2>Console</h2>
+        <div id="console" class="console"></div>
+        <p id="gps_info"></p>
+    </div>
+</body>
+<script src="./renderer.js"></script>
+</html>
